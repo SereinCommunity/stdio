@@ -1,17 +1,40 @@
-# TsPluginTemplate
+# stdio
 
-Serein插件模板仓库
+一个提供文件读写、目录创建删除等功能的前置插件
 
-## 使用方法
+>[!tip]
+>你可以在[此处](https://learn.microsoft.com/zh-cn/dotnet/api/system.io?view=net-8.0)找到更详细的说明
 
-### 创建仓库
+## 函数一览
 
-1. 点击仓库右上角的`Use this template`
-2. 选择`Create a new repository`并创建仓库
-3. 编写你的插件✨
+```ts
+declare function appendTextToFile(path: string, content: string, encoding?: any): void;
+declare function appendLinesToFile(path: string, content: string[], encoding?: any): void;
+declare function readAllLinesFromFile(path: string, encoding?: any): string[];
+declare function readAllTextFromFile(path: string, encoding?: any): string;
+declare function writeLinesToFile(path: string, content: string[], encoding?: any): void;
+declare function writeAllTextToFile(path: string, contents?: string, encoding?: any): void;
 
-### 使用源码
+declare function existFile(path: string): boolean;
+declare function copyFile(sourceFileName: string, destFileName: string, overwrite?: boolean): void;
+declare function deleteFile(path: string): void;
+declare function moveFile(sourceFileName: string, destFileName: string, overwrite?: boolean): void;
+declare function renameFile(sourceFileName: string, destFileName: string): void;
 
-1. 点击仓库右上角的`Code`
-2. 点击`Download ZIP`下载源码并解压
-3. 编写你的插件✨
+declare function existFileOrDirectory(path: string): boolean;
+declare function existDirectory(path: string): boolean;
+declare function createDirectory(path: string): void;
+declare function deleteDirectory(path: string): void;
+declare function moveDirectory(sourceDirName: string, destDirName: string): void;
+
+declare function getFiles(path: string, searchPattern?: string, searchOption?: any): string[];
+declare function getDirectories(path: string, searchPattern?: string, searchOption?: any): string[];
+declare function getDirectoryName(path: string): string | null;
+declare function getFileName(path: string): string | null;
+declare function getExtension(path: string): string | null;
+declare function getFileNameWithoutExtension(path: string): string | null;
+declare function getFullPath(path: string, basePath?: string): string;
+declare function getFileCreationTime(path: string): Date;
+declare function getFileLastAccessTime(path: string): Date;
+declare function getFileLastWriteTime(path: string): Date;
+```
