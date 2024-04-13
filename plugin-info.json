@@ -1,0 +1,16 @@
+{
+    "$schema": "https://sereincommunity.github.io/json-schemas/v2/plugin-info.json",
+    "name": "文件管理",
+    "description": "一个提供文件读写、目录创建删除等功能的前置插件",
+    "id": "stdio",
+    "isModule": true,
+    "targetingSerein": [
+        "1.3.3",
+        "1.3.4",
+        "1.3.5",
+        "2.0"
+    ],
+    "tags": [
+        "development"
+    ]
+}
